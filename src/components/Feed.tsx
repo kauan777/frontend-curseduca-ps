@@ -1,6 +1,6 @@
 import React from "react";
 import { PostProps } from "../types/post";
-import BoxCreatePost from "./BoxCreatePost";
+import BoxCreatePost from "./Post/BoxCreatePost";
 import Post from "./Post";
 
 interface FeedProp {
