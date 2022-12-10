@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #fafafa;
+}
+
+.my-linear-gradient {
+  background: linear-gradient(90deg, #0168eb 3.69%, #002d79 96.81%);
+  transition: 0.2s all;
+}
+
+.delete-icon, .edit-icon {
+  transition: 0.1s;
+}
+
+#navbar{
+ z-index: 40 !important;
+}
+
+.delete-icon:hover{
+  filter: invert(55%) sepia(6%) saturate(4997%) hue-rotate(314deg) brightness(101%) contrast(83%);
+}
+
+.edit-icon:hover{
+  filter: invert(41%) sepia(2%) saturate(0%) hue-rotate(38deg) brightness(104%) contrast(83%);
+}
+
+
+.secondary {
+  background: transparent !important;
+  color: #0168eb;
+  border: 1px solid #0168eb !important;
+  transition: 0.2s all;
+}
+
+.secondary:hover {
+  opacity: 0.8;
+}
+
+.my-linear-gradient:active,
+.secondary:active {
+  transform: scale(0.95);
+}
+
+.my-animation {
+  animation: animateBox 0.2s;
+}
+
+@keyframes animateBox {
+  0% {
+    opacity: 0;
+    margin-left: -20px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+.modal{
+  animation: animationModal 0.2s;
+}
+
+@keyframes animationModal {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
