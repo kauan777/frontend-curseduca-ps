@@ -4,7 +4,12 @@ import { useAuthentication } from "../contexts/AuthenticationContext";
 import { api } from "../utils/api";
 import { destroyCookie } from "nookies";
 import { useRouter } from "next/router";
-export default function NavBar() {
+
+interface NavBarProps {
+  content: "index" | "friendships";
+}
+
+export default function NavBar({ content }: NavBarProps) {
   const user = useAuthentication((state) => state.user);
   const setUser = useAuthentication((state) => state.setUser);
 
@@ -15,7 +20,7 @@ export default function NavBar() {
     },
     {
       description: "Amigos",
-      link: "/friends",
+      link: "/friendships",
     },
   ];
 
@@ -50,10 +55,12 @@ export default function NavBar() {
         hideIn="xs"
         variant="highlight-rounded"
       >
-        <Navbar.Link isActive href="/">
+        <Navbar.Link isActive={content == "index"} href="/">
           Feed
         </Navbar.Link>
-        <Navbar.Link href="/">Amigos</Navbar.Link>
+        <Navbar.Link isActive={content == "friendships"} href="/friendships">
+          Amigos
+        </Navbar.Link>
       </Navbar.Content>
       <Navbar.Content
         css={{
@@ -76,7 +83,7 @@ export default function NavBar() {
                     ? `${api.getUri().toString()}/uploads/users/${
                         user?.imagePath
                       }`
-                    : "https://images.cws.digital/produtos/gg/75/53/bacia-vaso-sanitario-anturius-quadrado-cinza-prata-7595375-1616769362019.jpg"
+                    : ""
                 }
               />
             </Dropdown.Trigger>
