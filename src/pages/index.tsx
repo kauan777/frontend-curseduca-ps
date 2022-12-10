@@ -30,7 +30,7 @@ export default function Home({ user, postsData }: HomeProps) {
 
   return (
     <>
-      <NavBar />
+      <NavBar content="index" />
       <main className="flex justify-center py-7 px-4">
         <Feed posts={posts} getAllPosts={getAllPosts} />
       </main>
