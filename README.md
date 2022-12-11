@@ -56,21 +56,7 @@ npm run dev
 yarn 
 ```
 
-<br/>
 
-- Para ter uma melhor experiência, você pode rodar em produção
-
-```bash
-npm build 
-#ou
-yarn build
-```
-
-```bash
-npm start 
-#ou
-yarn start
-```
 
 
 
