@@ -1,4 +1,4 @@
-import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
+import { Table, Row, Col, Tooltip, User } from "@nextui-org/react";
 import { useFriendship } from "../../contexts/FriendshipContext";
 import Image from "next/image";
 import trash from "../../assets/icons/trash.svg";
